@@ -1,21 +1,11 @@
 pipeline {
   agent any
 
-  options {
-    skipDefaultCheckout()
-  }
-
   environment {
     COMPOSE_PROJECT_NAME = 'docker-compose-php'
   }
 
   stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
-
     stage('Build Images') {
       steps {
         sh 'docker compose build'
