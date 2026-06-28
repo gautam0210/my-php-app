@@ -34,6 +34,10 @@ To stop and remove app containers and volumes:
 docker compose down -v
 ```
 
+### Note about bind-mounts
+
+The app and nginx images now contain the application files and `default.conf` baked into the images at build time. This avoids bind-mounting files from the Jenkins workspace at runtime and prevents the deployment from accidentally affecting the Jenkins container.
+
 ## Jenkins setup
 
 Jenkins should run from its own compose file so app deployment does not restart the Jenkins container.

@@ -1,12 +1,38 @@
 # Ignore build context files that are not needed in the Docker build
 .git
 .gitignore
+.github
+.github/*
 README.md
 Assignment.txt
 Dockerfile-jenkins
+docker-compose-jenkins.yml
 Jenkinsfile
+jenkins_home
+.env
+.env.local
 *.log
 *.tmp
-.vscode
-.idea
+.vscode/
+.idea/
 *.iml
+.DS_Store
+Thumbs.db
+
+# Node / PHP / vendor artifacts
+node_modules/
+vendor/
+composer.lock
+
+# Build artifacts and caches
+build/
+dist/
+coverage/
+.cache/
+tmp/
+logs/
+
+# Tests and docs
+tests/
+docs/
+
