@@ -9,6 +9,7 @@ This repository contains a Docker Compose stack for a PHP application using:
 
 ## Files
 - `docker-compose.yml` - application stack configuration
+- `docker-compose-jenkins.yml` - Jenkins stack configuration
 - `Dockerfile` - PHP-FPM image build file
 - `Dockerfile-jenkins` - Jenkins image build file with Docker support
 - `Jenkinsfile` - pipeline definition for building and deploying with Docker Compose
@@ -26,12 +27,38 @@ docker compose up --build -d
 Open these URLs:
 - App: `http://localhost:8080`
 - phpMyAdmin: `http://localhost:8081`
-- Jenkins: `http://localhost:8082`
 
-To stop and remove containers and volumes:
+To stop and remove app containers and volumes:
 
 ```powershell
 docker compose down -v
+```
+
+## Jenkins setup
+
+Jenkins should run from its own compose file so app deployment does not restart the Jenkins container.
+
+### Start Jenkins separately
+```powershell
+docker compose -f docker-compose-jenkins.yml up --build -d
+```
+
+Open Jenkins at:
+- `http://localhost:8082`
+
+### Start the app stack separately
+```powershell
+docker compose up --build -d
+```
+
+### Stop the app stack without stopping Jenkins
+```powershell
+docker compose down -v
+```
+
+### Stop Jenkins
+```powershell
+docker compose -f docker-compose-jenkins.yml down -v
 ```
 
 ## Jenkins setup
