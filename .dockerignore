@@ -1,0 +1,12 @@
+# Ignore build context files that are not needed in the Docker build
+.git
+.gitignore
+README.md
+Assignment.txt
+Dockerfile-jenkins
+Jenkinsfile
+*.log
+*.tmp
+.vscode
+.idea
+*.iml

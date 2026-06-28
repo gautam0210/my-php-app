@@ -1,0 +1,20 @@
+# Node / system files
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+*.log
+*.tmp
+
+# Jenkins
+jenkins_home/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS generated files
+ehthumbs.db
+Icon?

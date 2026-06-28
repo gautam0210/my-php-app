@@ -1,0 +1,19 @@
+Assignment: Docker and Automation with Jenkins
+Docker Setup Using docker-compose:
+
+Create a docker-compose.yml file to set up the following containers:
+Nginx (version 1.25)
+PHP-FPM (version 7.3)
+phpMyAdmin
+MySQL (version 8.0)
+
+Jenkins Pipeline for Docker Deployment:   
+
+Create a Jenkins pipeline script that will automate the deployment of the Docker containers specified in your docker-compose.yml file.
+The pipeline should pull the latest code, build the Docker images, and deploy the containers using Docker Compose. 
+
+Shell Script for IP Extraction from Logs: 
+Write a shell script to extract and display a list of unique IP addresses from Nginx or Apache access/error logs.
+
+MySQL Backup Script with S3 Upload: 
+Create a shell script that performs a backup of a MySQL database and uploads the backup file to an S3 container. 
